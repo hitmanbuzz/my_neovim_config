@@ -1,8 +1,20 @@
 vim.o.background = "dark"
 
 --local colorscheme = require("lazyvim.plugins.colorscheme")
+
 return {
-  { "AlexvZyl/nordic.nvim" },
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nordic").setup({
+        on_palette = function(palette)
+          palette.gray0 = "#191D24"
+        end,
+      })
+    end,
+  },
 
   { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 
@@ -43,7 +55,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "hybrid",
+      colorscheme = "nordic",
     },
   },
 }
