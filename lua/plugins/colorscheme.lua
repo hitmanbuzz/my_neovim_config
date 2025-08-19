@@ -11,6 +11,7 @@ return {
       require("nordic").setup({
         on_palette = function(palette)
           palette.gray0 = "#191D24"
+          palette.black0 = "#2E3440"
         end,
       })
     end,
